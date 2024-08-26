@@ -43,13 +43,13 @@ const LoginScreen=({navigation})=>{
                     duration: 4000,
                     animationType: "slide",
                     style: {
-                      backgroundColor: '#f44336', // Change background color
-                      borderRadius: 10, // Optional: adjust border radius
-                      padding: 15, // Optional: adjust padding
+                      backgroundColor: '#f44336', 
+                      borderRadius: 10, 
+                      padding: 15, 
                     },
                     textStyle: {
-                      color: '#fff', // Change text color
-                      fontWeight: 'bold', // Optional: adjust font weight
+                      color: '#fff',
+                      fontWeight: 'bold',
                     }
                   });
               
