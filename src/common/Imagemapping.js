@@ -5,8 +5,7 @@ const imageMapping = {
     3: require('../../assets/Garlic.png'),
     4: require('../../assets/OrganicSpices.png'),
     5: require('../../assets/MixedVegetables.png'),
-    6: require('../../assets/RoastedPeas.png'),
-    // Add other mappings as needed
+    6: require('../../assets/RoastedPeas.png')
 };
 
 export default imageMapping;
