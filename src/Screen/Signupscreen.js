@@ -1,4 +1,4 @@
-// SignupScreen.js
+
 
 import React, { useRef, useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert,TouchableOpacity } from 'react-native';
@@ -6,7 +6,7 @@ import { useToast } from "react-native-toast-notifications";
 import { useDispatch } from 'react-redux';
 import { Signupdata } from '../store/Signupslice';
 const SignupScreen = ({navigation}) => {
-  // Create refs for input fields
+
   const firstnameRef = useRef(null);
   const lastnameRef = useRef(null);
   const emailRef = useRef(null);
@@ -113,8 +113,8 @@ const SignupScreen = ({navigation}) => {
         onChangeText={setConfirmPassword}
         value={confirmPassword}
         secureTextEntry
-        returnKeyType="done"  // Set return key type to "done" for the last field
-        onSubmitEditing={handleSubmit}  // Submit form on "done"
+        returnKeyType="done"  
+        onSubmitEditing={handleSubmit}  
       />
 
 <TouchableOpacity style={styles.loginbtn}
