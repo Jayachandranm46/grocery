@@ -36,8 +36,8 @@ const TrendingDeals = ({ navigation }) => {
               padding: 15, 
             },
             textStyle: {
-              color: '#fff', // Change text color
-              fontWeight: 'bold', // Optional: adjust font weight
+              color: '#fff', 
+              fontWeight: 'bold', 
             }
           });
         dispatch(StoreData(item));
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     trendingItem: {
-        width: (Dimensions.get('window').width - 48) / 2, // Adjusting width for two columns
+        width: (Dimensions.get('window').width - 48) / 2, 
         margin: 8,
         borderRadius: 10,
         backgroundColor: '#FFFFFF',
