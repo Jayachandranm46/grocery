@@ -110,7 +110,7 @@ const CheckoutScreen = ({navigation}) => {
                     <Text style={style.font}>{item.name}    250 G</Text>
                     <View style={style.quantityContainer}>
                       <Text style={[style.font, {fontSize:23}]}>
-                        1  X
+                        1 X
                       </Text>
                       <Text style={[style.font,{marginLeft:7,fontSize:22}]}>
                         25
@@ -145,7 +145,7 @@ const CheckoutScreen = ({navigation}) => {
                 <View style={style.contentWrapper}>
                   <View style={style.row}>
                     <Text style={[style.font,{fontSize:18}]}>Sub Total</Text>
-                    <View style={{marginLeft:16}}>
+                    <View style={{marginLeft:40}}>
                       <Icon name='more-vertical' size={20} color='#05A845' />
                     </View>
                     <Text style={[style.font,{fontSize:20,color:'#05A845'}]}>
@@ -278,3 +278,4 @@ const style = StyleSheet.create({
     marginVertical: 10, 
   },
 });
+
