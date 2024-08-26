@@ -75,7 +75,7 @@ const Home = ({ navigation }) => {
               padding: 15, 
             },
             textStyle: {
-              color: '#fff', // Change text color
+              color: '#fff',
               fontWeight: 'bold',
             }
           });
