@@ -69,8 +69,8 @@ const SignupScreen = ({navigation}) => {
         ref={firstnameRef}
         onChangeText={setFirstname}
         value={firstname}
-        returnKeyType="next"  // Set return key type to "next"
-        onSubmitEditing={() => lastnameRef.current.focus()}  // Move focus to next field
+        returnKeyType="next"  "
+        onSubmitEditing={() => lastnameRef.current.focus()}  
         placeholderTextColor={'gray'}
       />
 
