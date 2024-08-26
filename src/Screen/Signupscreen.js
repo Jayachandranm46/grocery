@@ -1,4 +1,3 @@
-// SignupScreen.js
 
 import React, { useRef, useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert,TouchableOpacity } from 'react-native';
