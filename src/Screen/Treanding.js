@@ -12,7 +12,7 @@ import imageMapping from "../common/Imagemapping";
 const TrendingDeals = ({ navigation }) => {
     const width = Dimensions.get('window').width;
     const [numColumns, setNumColumns] = useState(2);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const toast = useToast();
 
     const TrendingDeals = [
