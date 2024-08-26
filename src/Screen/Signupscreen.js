@@ -1,4 +1,4 @@
-
+// SignupScreen.js
 
 import React, { useRef, useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert,TouchableOpacity } from 'react-native';
@@ -6,7 +6,6 @@ import { useToast } from "react-native-toast-notifications";
 import { useDispatch } from 'react-redux';
 import { Signupdata } from '../store/Signupslice';
 const SignupScreen = ({navigation}) => {
-
   const firstnameRef = useRef(null);
   const lastnameRef = useRef(null);
   const emailRef = useRef(null);
@@ -19,18 +18,28 @@ const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [validemail,setValidemail]=useState('')
+  const [validpassword,setValidpassword]=useState('')
   const dispatch=useDispatch()
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
   const handleSubmit = () => {
    if(email&&password&&confirmPassword&&firstname&&lastname){
-    dispatch(Signupdata({
+
+
+    
+      dispatch(Signupdata({
         email:email,
         password:password
     }))
     toast.show("Signup scuessfully");
     navigation.navigate('Login')
-
-   }
+  }
+  
    else{
     toast.show("Please fill in the required fields", {
         type: "sucess", 
@@ -51,7 +60,28 @@ const SignupScreen = ({navigation}) => {
    }
 
   
+const verifyemail=()=>{
+  const returntype=validateEmail(email)
+  if(returntype){
+    setValidemail('')
+    passwordRef.current.focus()
+  }
+  else{
+    setValidemail('Please enter a valid email address')
+  }
+  
+}
 
+const verifypassword=()=>{
+  if(password!=confirmPassword){
+    setValidpassword('Passwords do not match.')
+     
+  }
+  else{
+    setValidpassword('')
+  }
+
+}
   
 
   return (
@@ -69,8 +99,8 @@ const SignupScreen = ({navigation}) => {
         ref={firstnameRef}
         onChangeText={setFirstname}
         value={firstname}
-        returnKeyType="next"  "
-        onSubmitEditing={() => lastnameRef.current.focus()}  
+        returnKeyType="next"  
+        onSubmitEditing={() => lastnameRef.current.focus()} 
         placeholderTextColor={'gray'}
       />
 
@@ -81,7 +111,7 @@ const SignupScreen = ({navigation}) => {
         onChangeText={setLastname}
         value={lastname}
         returnKeyType="next"
-        onSubmitEditing={() => emailRef.current.focus()}
+        onSubmitEditing={() =>emailRef.current.focus()}
       />
 
       <Text style={styles.label}>Email</Text>
@@ -92,8 +122,13 @@ const SignupScreen = ({navigation}) => {
         value={email}
         // keyboardType="email-address"
         returnKeyType="next"
-        onSubmitEditing={() => passwordRef.current.focus()}
+        onSubmitEditing={() => verifyemail()}
       />
+      {
+        validemail?(
+          <Text style={{color:'red',fontSize:15,fontWeight:'bold'}}>{validemail}</Text>
+        ):null
+      }
 
       <Text style={styles.label}>Password</Text>
       <TextInput
@@ -114,8 +149,13 @@ const SignupScreen = ({navigation}) => {
         value={confirmPassword}
         secureTextEntry
         returnKeyType="done"  
-        onSubmitEditing={handleSubmit}  
+        onSubmitEditing={()=>verifypassword()}  
       />
+        {
+        validpassword?(
+          <Text style={{color:'red',fontSize:15,fontWeight:'bold'}}>{validpassword}</Text>
+        ):null
+      }
 
 <TouchableOpacity style={styles.loginbtn}
                 onPress={()=>handleSubmit()}
@@ -146,7 +186,8 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingHorizontal: 8,
     borderRadius:10,
-    color:'green'
+    color:'#000',
+    fontSize:17,
   },
   loginbtn:{
     width:343,
@@ -168,3 +209,4 @@ logintxt:{
 });
 
 export default SignupScreen;
+
