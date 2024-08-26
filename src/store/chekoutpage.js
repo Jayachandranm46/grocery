@@ -18,7 +18,6 @@ const Chekoutslice=createSlice({
             } else {
                 console.log('old date')
                 
-                console.log('Item already exists in the cart: for checkoutdata', item);
             }
 
         }
