@@ -13,11 +13,10 @@ const AddtoCard=createSlice({
             const itemIndex = state.AddtoCardDate.findIndex(existingItem => existingItem.id === item.id);
 
             if (itemIndex === -1) {
-                console.log('new data')
+             
                 state.AddtoCardDate.push(item);
             } else {
-                console.log('old date')
-                
+            
                 console.log('Item already exists in the cart:', item);
             }
 
