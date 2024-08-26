@@ -75,11 +75,11 @@ const Home = ({ navigation }) => {
               padding: 15, 
             },
             textStyle: {
-              color: '#fff',
+              color: '#fff', 
               fontWeight: 'bold',
             }
           });
-        // dispatch(StoreData(item));
+        
     };
 
     return (
