@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import { Image, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useSelector } from "react-redux";
 import { useToast } from "react-native-toast-notifications";
@@ -7,6 +7,8 @@ const LoginScreen=({navigation})=>{
     // console.log('userdata--->',userdata)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
     const toast = useToast();
     useEffect(()=>{
         
@@ -45,11 +47,10 @@ const LoginScreen=({navigation})=>{
                     style: {
                       backgroundColor: '#f44336', 
                       borderRadius: 10, 
-                      padding: 15, 
                     },
                     textStyle: {
-                      color: '#fff',
-                      fontWeight: 'bold',
+                      color: '#fff', 
+                      fontWeight: 'bold', 
                     }
                   });
               
@@ -135,7 +136,10 @@ const LoginScreen=({navigation})=>{
                    placeholder="Email"
                    value={email}
                    onChangeText={setEmail}
-                  placeholderTextColor={'gray'}
+                  placeholderTextColor={'#000'}
+                  returnKeyType="next"
+                  onSubmitEditing={() => passwordRef.current.focus()}
+                  ref={emailRef}
                    />
                 </View>
                 <View>
@@ -145,7 +149,8 @@ const LoginScreen=({navigation})=>{
                 value={password}
                 secureTextEntry
                 onChangeText={setPassword}
-                placeholderTextColor={'gray'}
+                placeholderTextColor={'#000'}
+                ref={passwordRef}
                 
 
                 />
@@ -256,7 +261,7 @@ const style=StyleSheet.create(
           paddingLeft:20,
           fontSize:20,
           backgroundColor:'#F6FFFA',
-          color:'green'
+          color:'#000'
         },
         loginbtn:{
             width:343,
