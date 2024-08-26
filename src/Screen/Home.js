@@ -76,7 +76,7 @@ const Home = ({ navigation }) => {
             },
             textStyle: {
               color: '#fff', // Change text color
-              fontWeight: 'bold', // Optional: adjust font weight
+              fontWeight: 'bold',
             }
           });
         // dispatch(StoreData(item));
