@@ -39,7 +39,7 @@ const AddtoCard = ({ navigation }) => {
     const Checkoutpage = () => {
         const checkoutData = selectedItems.map(item => {
             const quantity = quantities[item.id] || 1;
-            const totalAmount = item.amount * quantity; // Calculate the total amount for the item
+            const totalAmount = item.amount * quantity; 
 
             return {
                 ...item,
