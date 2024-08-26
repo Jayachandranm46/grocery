@@ -17,7 +17,7 @@ const AddtoCard=createSlice({
                 state.AddtoCardDate.push(item);
             } else {
             
-                console.log('Item already exists in the cart:', item);
+                console.log('', item);
             }
 
         }
