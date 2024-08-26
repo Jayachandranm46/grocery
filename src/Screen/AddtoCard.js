@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: 20,
+        paddingBottom: 20, 
     },
     continueButton: {
         width: 343,
