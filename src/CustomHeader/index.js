@@ -53,7 +53,7 @@ const style = StyleSheet.create({
         color:'#000'
     },
     placeholder: {
-        width: 24, // Ensure it has the same width as the icon for consistent spacing
+        width: 24, 
     },
     header: {
         // flexDirection: 'row',
